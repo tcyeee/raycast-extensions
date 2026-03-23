@@ -1,6 +1,6 @@
 # Quickly Add to Reminders
 
-Quickly add tasks to Apple Reminders without opening the Reminders app.
+Quickly add tasks to Apple Reminders using prefix autocomplete — type `!` for priority, `@` for due date, `/` for list, and `#` for tags, all without opening the Reminders app.
 
 ## Commands
 

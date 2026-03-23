@@ -3,7 +3,7 @@ import { parseInput } from "./utils/parse-input";
 import { addReminder } from "./utils/add-reminder";
 import { saveTagsToHistory } from "./utils/tag-history";
 
-export default async function Command(props: LaunchProps<{ arguments: { text: string } }>) {
+export default async function Command(props: LaunchProps<{ arguments: Arguments.QuicklyAdd }>) {
   const raw = props.arguments.text.trim();
 
   const parsed = parseInput(raw);
