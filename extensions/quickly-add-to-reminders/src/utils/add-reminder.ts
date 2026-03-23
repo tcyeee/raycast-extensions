@@ -20,7 +20,10 @@ function run(argv) {
   var EK_ENTITY_REMINDER = 1;
 
   var authStatus = $.EKEventStore.authorizationStatusForEntityType(EK_ENTITY_REMINDER);
-  if (authStatus !== 3) {
+  // macOS 14+: status 3 = EKAuthorizationStatusWriteOnly, status 4 = EKAuthorizationStatusFullAccess
+  // Pre-macOS 14: status 3 = EKAuthorizationStatusAuthorized
+  // Any status < 3 means not authorized (0=NotDetermined, 1=Restricted, 2=Denied)
+  if (authStatus < 3) {
     throw new Error("Reminders access not authorized. Please grant access in System Settings > Privacy & Security > Reminders.");
   }
 
